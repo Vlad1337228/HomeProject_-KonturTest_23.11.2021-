@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace osnovnoi_tyr
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var pass=Console.ReadLine();
+
+            if(pass.Length>=7 
+                && pass.Where(x=>char.IsLetter(x)).Count() >= 2
+                && pass.Where(x => char.IsDigit(x)).Count()>=2 
+                && pass.Where(x => !char.IsDigit(x) && !char.IsLetter(x)).Count() >= 1)
+            {
+                Console.WriteLine("GOOD");
+            }
+            else
+                Console.WriteLine("BAD");
+        }
+    }
+}

@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace osnovnoi_tyr
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            dict.Add("r", 0);
+            dict.Add("g", 0);
+            dict.Add("b", 0);
+            dict.Add("y", 0);
+            var color = Console.ReadLine();
+            for (int i = 1; i < 10; i++)
+            {
+                for (int j = 1; j < 10; j++)
+                {
+                    if (i * j % 2 == 0)
+                    {
+                        dict["r"]++;
+                    }
+                    if (i*j%3==0 && !(i * j % 2 == 0))
+                    {
+                        dict["g"]++;
+                    }
+                    if (!(i * j % 3 == 0) && !(i * j % 2 == 0) && i*j%5==0)
+                    {
+                        dict["b"]++;
+                    }
+                    if (!(i * j % 3 == 0) && !(i * j % 2 == 0) && !(i * j % 5 == 0))
+                    {
+                        dict["y"]++;
+                    }
+                }
+            }
+            Console.WriteLine(dict[color]);
+        }
+    }
+}
